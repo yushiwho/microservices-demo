@@ -1,5 +1,5 @@
 ---
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: rabbitmq
@@ -40,3 +40,6 @@ spec:
           name: exporter
       nodeSelector:
         beta.kubernetes.io/os: linux
+  selector:
+    matchLabels:
+      name: rabbitmq

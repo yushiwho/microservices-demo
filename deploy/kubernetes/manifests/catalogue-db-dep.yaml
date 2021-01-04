@@ -1,5 +1,5 @@
 ---
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: catalogue-db
@@ -26,3 +26,6 @@ spec:
           containerPort: 3306
       nodeSelector:
         beta.kubernetes.io/os: linux
+  selector:
+    matchLabels:
+      name: catalogue-db

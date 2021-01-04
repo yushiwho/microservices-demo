@@ -1,5 +1,5 @@
 ---
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: session-db
@@ -32,3 +32,6 @@ spec:
           readOnlyRootFilesystem: true
       nodeSelector:
         beta.kubernetes.io/os: linux
+  selector:
+    matchLabels:
+      name: session-db
